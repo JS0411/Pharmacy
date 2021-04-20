@@ -12,4 +12,18 @@ class Farmacia extends Model
     public function empleados() {
       return $this->hasMany(Empleado::class);
     }
+
+    public function medicamentos(){
+      return $this->belongsToMany(Medicamento::Class);
+    }
+
+    public function orden_compras(){
+      return $this->belongsToMany(Orden_Compra::Class);
+    }
+
+    public function compras(){
+      return $this->hasManyThrough(Compra::Class, Orden_Compra::Class);
+    }
+
+
 }

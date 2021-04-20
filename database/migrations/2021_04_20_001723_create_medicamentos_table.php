@@ -19,7 +19,6 @@ class CreateMedicamentosTable extends Migration
             $table->integer('precio');
             $table->string('nombre_lab');
             $table->string('accion_t');
-            $table->string('inventario');
             $table->timestamps();
         });
     }

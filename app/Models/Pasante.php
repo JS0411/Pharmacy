@@ -12,4 +12,8 @@ class Pasante extends Model
     public function empleado() {
       return $this->morphOne(Empleado::class, 'empleable');
     }
+
+    public function representante() {
+      return $this->hasOne(Representante::class);
+    }
 }
