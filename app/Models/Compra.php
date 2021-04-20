@@ -9,7 +9,7 @@ class Compra extends Model
 {
     use HasFactory;
 
-    public function Orden_Compra() {
-      return $this->belongsTo(Orden_Compra::Class);
+    public function pedido() {
+      return $this->belongsTo(Pedido::Class);
     }
 }

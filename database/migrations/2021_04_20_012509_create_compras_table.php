@@ -17,9 +17,10 @@ class CreateComprasTable extends Migration
             $table->id();
             $table->string('insumos_recibidos');
             $table->string('costo_final');
+            $table->date('fecha_vencimiento');
             $table->boolean('pagado');
-             $table->foreignId('orden_compras_id')
-              ->constrained('orden_compras')
+             $table->foreignId('pedido_id')
+              ->constrained('pedidos')
               ->onDelete('cascade');
             $table->timestamps();
         });

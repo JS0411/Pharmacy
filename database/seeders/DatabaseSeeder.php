@@ -44,14 +44,10 @@ class DatabaseSeeder extends Seeder
             'nombre_lab' => $lab->nombre,
           ]);
 
-        $orden_compra = \App\Models\OrdenCompra::Factory()
+        $pedido = \App\Models\Pedido::Factory()
           ->count(3)
           ->for(\App\Models\Farmacia::find($i))
-          ->create();
-
-        $compra = \App\Models\Compra::Factory()
-          ->count(3)
-          ->for(\App\Models\Orden_Compra::find($i))
+          ->has(\App\Models\Compra::Factory())
           ->create();
       }
 

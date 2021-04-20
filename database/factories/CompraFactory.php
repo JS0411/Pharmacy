@@ -24,7 +24,8 @@ class CompraFactory extends Factory
         return [
             'insumos_recibidos' => $this->faker->sentence($nbWords = 6, $variableNbWords = true),
             'costo_final' => $this->faker->randomNumber(),
-            'pagado' => $this->faker->randomNumber()
+            'pagado' => $this->faker->boolean(),
+            'fecha_vencimiento' => $this->faker->dateTimeBetween($startDate= 'now', $endDate = '+1 years')
         ];
     }
 }

@@ -17,12 +17,12 @@ class Farmacia extends Model
       return $this->hasMany(Medicamento::Class);
     }
 
-    public function orden_compras(){
-      return $this->hasMany(Orden_Compra::Class);
+    public function ordenCompras(){
+      return $this->hasMany(Ordene::Class);
     }
 
     public function compras(){
-      return $this->hasManyThrough(Compra::Class, Orden_Compra::Class);
+      return $this->hasManyThrough(Compra::Class, Pedido::Class);
     }
 
 
