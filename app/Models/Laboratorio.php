@@ -10,6 +10,6 @@ class Laboratorio extends Model
     use HasFactory;
 
     public function medicamentos(){
-      return $this->belongsToMany(Medicamento::Class);
+      return $this->hasMany(Medicamento::Class);
     }
 }

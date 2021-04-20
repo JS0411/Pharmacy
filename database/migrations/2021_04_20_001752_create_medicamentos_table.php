@@ -16,9 +16,18 @@ class CreateMedicamentosTable extends Migration
         Schema::create('medicamentos', function (Blueprint $table) {
             $table->id();
             $table->string('nombre');
+            $table->string('monodroga');
+            $table->string('presentacion');
             $table->integer('precio');
             $table->string('nombre_lab');
             $table->string('accion_t');
+            $table->integer('stock');
+            $table->foreignId('farmacia_id')
+              ->constrained('farmacias')
+              ->onDelete('cascade');
+            $table->foreignId('laboratorio_id')
+              ->constrained('farmacias')
+              ->onDelete('cascade');
             $table->timestamps();
         });
     }

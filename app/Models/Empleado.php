@@ -7,6 +7,8 @@ use Illuminate\Database\Eloquent\Model;
 
 class Empleado extends Model
 {
+    protected $fillable = ['farmacia_id'];
+
     use HasFactory;
 
     public function farmacia() {

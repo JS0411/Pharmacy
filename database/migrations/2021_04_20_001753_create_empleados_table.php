@@ -15,12 +15,12 @@ class CreateEmpleadosTable extends Migration
     {
         Schema::create('empleados', function (Blueprint $table) {
             $table->id();
-            $table->integer('cedula');
+            $table->string('cedula');
             $table->string('nombre');
             $table->integer('salario')->default(0);
             $table->integer('empleable_id');
             $table->string('empleable_type');
-            $table->foreignId('id_farmacia')
+            $table->foreignId('farmacia_id')
               ->constrained('farmacias')
               ->onDelete('cascade');
             $table->timestamps();

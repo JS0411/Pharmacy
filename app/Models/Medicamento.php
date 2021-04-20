@@ -9,11 +9,11 @@ class Medicamento extends Model
 {
     use HasFactory;
 
-    public function farmacias() {
-      return $this->belongsToMany(Farmacia::Class);
+    public function farmacia() {
+      return $this->belongsTo(Farmacia::Class);
     }
 
-    public function laboratorios() {
-      return $this->belongsToMany(Laboratorio::Class);
+    public function laboratorio() {
+      return $this->belongsTo(Laboratorio::Class);
     }
 }

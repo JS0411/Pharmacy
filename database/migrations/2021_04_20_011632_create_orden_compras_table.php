@@ -18,6 +18,9 @@ class CreateOrdenComprasTable extends Migration
             $table->string('descripcion');
             $table->string('forma_pago');
             $table->integer('costo_inicial');
+            $table->foreignId('farmacia_id')
+              ->constrained('farmacias')
+              ->onDelete('cascade');
             $table->timestamps();
         });
     }

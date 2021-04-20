@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateFarmaciaMedicamentoPivotTable extends Migration
+class CreateRepresentantesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,13 +13,13 @@ class CreateFarmaciaMedicamentoPivotTable extends Migration
      */
     public function up()
     {
-        Schema::create('farmacia_medicamento_pivot', function (Blueprint $table) {
+        Schema::create('representantes', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('farmacia_id')
+            $table->string('nombre_representante');
+            $table->integer('cod_representante');
+            $table->foreignId('pasantes_id')
+              ->constrained('pasantes')
               ->onDelete('cascade');
-            $table->foreignId('medicamento_id')
-              ->onDelete('cascade');
-            $table->integer('stock');
             $table->timestamps();
         });
     }
@@ -31,6 +31,6 @@ class CreateFarmaciaMedicamentoPivotTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('farmacia_medicamento_pivot');
+        Schema::dropIfExists('representantes');
     }
 }

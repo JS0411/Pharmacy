@@ -19,22 +19,9 @@
         </style>
     </head>
     <body class="antialiased">
-          <a href="{{route('farmacias.index')}}">
-            <button>
-              Ir a farmacias
-            </button>
-          </a>
+      @foreach ($pasantes as $pasante)
+        {{$pasante}}
+      @endforeach
 
-          <a href="{{route('pasantes.index')}}">
-            <button>
-              Ir a pasantes
-            </button>
-          </a>
-
-          <a href="{{route('medicamentos.index')}}">
-            <button>
-              Ir a medicamentos
-            </button>
-          </a>
     </body>
 </html>

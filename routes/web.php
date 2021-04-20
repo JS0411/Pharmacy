@@ -16,3 +16,7 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('/empleados/pasantes', 'App\Http\Controllers\PasantesController@index')->name('pasantes.index');
+Route::get('/farmacias', 'App\Http\Controllers\FarmaciasController@index')->name('farmacias.index');
+Route::get('/medicamentos', 'App\Http\Controllers\MedicamentosController@index')->name('medicamentos.index');

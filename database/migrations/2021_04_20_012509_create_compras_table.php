@@ -15,11 +15,10 @@ class CreateComprasTable extends Migration
     {
         Schema::create('compras', function (Blueprint $table) {
             $table->id();
-            $table->string('forma_pago');
             $table->string('insumos_recibidos');
             $table->string('costo_final');
-            $table->string('pagado');
-             $table->foreignId('id_orden_compras')
+            $table->boolean('pagado');
+             $table->foreignId('orden_compras_id')
               ->constrained('orden_compras')
               ->onDelete('cascade');
             $table->timestamps();
