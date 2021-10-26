@@ -7,6 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Farmacia extends Model
 {
+  protected $fillable = ['nombre', 'ciudad'];
     use HasFactory;
 
     public function empleados() {

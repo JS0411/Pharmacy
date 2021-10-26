@@ -19,9 +19,16 @@
         </style>
     </head>
     <body class="antialiased">
-      @foreach ($pasantes as $pasante)
-        {{$pasante}}
-      @endforeach
-
+      <h2>Detalle del Empleado</h2>
+        <br><br>
+        {{$empleado}}
+        <br>
+        <h3>Informacion Adicional</h3>
+        <br><br>
+        {{$empleado->empleable}}
+        @if ($empleado->empleable_type == '\\App\\Models\\Pasante' AND $empleado->empleable->menor_de_edad == 1)
+          <br><br>
+          {{$empleado->empleable->representante}}
+        @endif
     </body>
 </html>

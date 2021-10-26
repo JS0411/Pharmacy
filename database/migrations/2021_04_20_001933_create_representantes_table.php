@@ -17,7 +17,7 @@ class CreateRepresentantesTable extends Migration
             $table->id();
             $table->string('nombre_representante');
             $table->integer('cod_representante');
-            $table->foreignId('pasantes_id')
+            $table->foreignId('pasante_id')
               ->constrained('pasantes')
               ->onDelete('cascade');
             $table->timestamps();

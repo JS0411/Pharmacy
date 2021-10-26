@@ -19,21 +19,21 @@
         </style>
     </head>
     <body class="antialiased">
-    <h2>Farmacias</h2>
-        <a href="{{route('farmacias.create')}}">
-          <button>AGREGAR FARMACIA</button> 
+    <h2>Laboratorios</h2>
+        <a href="{{route('laboratorios.create')}}">
+          <button>AGREGAR LABORATORIO</button> 
         </a>
         <br><br>
-      @foreach ($farmacias as $farmacia)
-        {{$farmacia}}
+      @foreach ($laboratorios as $laboratorio)
+        {{$laboratorio}}
         <br>
         
         
-        <a href="{{route('farmacias.edit', ['id' => $farmacia->id])}}">
+        <a href="{{route('laboratorios.edit', ['id' => $laboratorio->id])}}">
           <button>EDITAR</button> 
         </a>
         
-        <form action="{{ route('farmacias.destroy', ['id' => $farmacia->id]) }}" method="POST">
+        <form action="{{ route('laboratorios.destroy', ['id' => $laboratorio->id]) }}" method="POST">
           @csrf
           @method('DELETE')
           <button type="submit">BORRAR</button> 

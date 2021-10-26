@@ -25,15 +25,21 @@
             </button>
           </a>
 
-          <a href="{{route('pasantes.index')}}">
+          <a href="{{route('empleados.index')}}">
             <button>
-              Ir a pasantes
+              Ir a empleados
             </button>
           </a>
 
           <a href="{{route('medicamentos.index')}}">
             <button>
               Ir a medicamentos
+            </button>
+          </a>
+
+          <a href="{{route('laboratorios.index')}}">
+            <button>
+              Ir a laboratorios
             </button>
           </a>
     </body>

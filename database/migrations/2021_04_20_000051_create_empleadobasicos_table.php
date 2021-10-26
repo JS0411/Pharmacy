@@ -13,7 +13,7 @@ class CreateEmpleadoBasicosTable extends Migration
      */
     public function up()
     {
-        Schema::create('empleado_basicos', function (Blueprint $table) {
+        Schema::create('empleadobasicos', function (Blueprint $table) {
             $table->id();
             $table->string('cargo');
             $table->timestamps();
@@ -27,6 +27,6 @@ class CreateEmpleadoBasicosTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('empleado_basicos');
+        Schema::dropIfExists('empleadobasicos');
     }
 }

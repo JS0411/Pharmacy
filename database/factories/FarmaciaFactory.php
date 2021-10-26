@@ -22,7 +22,7 @@ class FarmaciaFactory extends Factory
     public function definition()
     {
         return [
-            'nombre' => $this->faker->randomElement(['Farmatodo', 'Fundafarmacia', 'Locatel','Farmahorro']),
+            'nombre' => $this->faker->randomElement(['Farmatodo', 'Fundafarmacia', 'Locatel','Farmahorro','Farmatodo2', 'Fundafarmacia2', 'Locatel2','Farmahorro2']),
             'ciudad' => $this->faker->randomElement(['Alta Vista', 'Upata', 'San Felix', 'Piar', 'Cd. Bolivar']),
         ];
     }

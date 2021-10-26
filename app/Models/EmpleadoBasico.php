@@ -5,8 +5,10 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Empleado_Basico extends Model
+class EmpleadoBasico extends Model
 {
+  protected $fillable = ['cargo'];
+
     use HasFactory;
 
     public function empleado() {

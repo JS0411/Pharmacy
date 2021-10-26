@@ -24,11 +24,12 @@ class EmpleadoFactory extends Factory
     public function definition()
     {
         return [
-            'cedula' => $this->faker->ssn(),
+            'cedula' => $this->faker->randomNumber(),
             'nombre' => $this->faker->name(),
-            'farmacia_id' => 0,
-            'empleable_id' => Pasante::factory()->create(),
-            'empleable_type' => 'App\Models\Pasante'
+            'salario' => $this->faker->randomNumber(),
+            'farmacia_id' => Farmacia::factory()->create(),
+            'empleable_id' => 0,
+            'empleable_type' => ''
         ];
     }
 }

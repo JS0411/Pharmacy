@@ -19,8 +19,26 @@
         </style>
     </head>
     <body class="antialiased">
-      @foreach ($pasantes as $pasante)
-        {{$pasante}}
+    <h2>Medicamentos</h2>
+        <a href="{{route('medicamentos.create')}}">
+          <button>AGREGAR MEDICAMENTOS</button> 
+        </a>
+        <br><br>
+      @foreach ($medicamentos as $medicamento)
+        {{$medicamento}}
+        <br>
+        
+        
+        <a href="{{route('medicamentos.edit', ['id' => $medicamento->id])}}">
+          <button>EDITAR</button> 
+        </a>
+        
+        <form action="{{ route('medicamentos.destroy', ['id' => $medicamento->id]) }}" method="POST">
+          @csrf
+          @method('DELETE')
+          <button type="submit">BORRAR</button> 
+        </form>
+        <br><br>
       @endforeach
 
     </body>

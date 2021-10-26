@@ -7,16 +7,12 @@ use Illuminate\Database\Eloquent\Model;
 
 class Empleado extends Model
 {
-    protected $fillable = ['farmacia_id'];
+    protected $fillable = ['farmacia_id', 'cedula', 'nombre', 'empleable_id', 'empleable_type', 'salario'];
 
     use HasFactory;
 
     public function farmacia() {
       return $this->belongsTo(Farmacia::class);
-    }
-
-    public function farmaceutico() {
-      return $this->hasOne(Farmaceutico::class);
     }
 
     public function empleable() {

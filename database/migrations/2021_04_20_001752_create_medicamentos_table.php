@@ -26,7 +26,7 @@ class CreateMedicamentosTable extends Migration
               ->constrained('farmacias')
               ->onDelete('cascade');
             $table->foreignId('laboratorio_id')
-              ->constrained('farmacias')
+              ->constrained('laboratorios')
               ->onDelete('cascade');
             $table->timestamps();
         });
